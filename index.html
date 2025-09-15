@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Hostelería Pro</title>
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkNSTSBIb3N0ZWxlcsOtYSBQcm8iLAogICJzaG9ydF9uYW1lIjogIkNSTSBIb3N0ZWxlcsOtYSIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMmMzZTUwIiwKICAidGhlbWVfY29sb3IiOiAiIzJjM2U1MCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU5qUWlJR2hsYVdkb2REMGlOalFpSUhabGNuTnBiMjQ5SWpFdU1TSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklpQjJhV1YzUW05NVBTSXVNALTS0dNNaUI0SWlCNGJXeHVjenBZYkdsdWF6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNVGs1T1M5NGJHbHVheUkrUEhCaGRHZ2dabWxzYkQwaWl6SXpOemMzWmlJZ1pEMGlaVEUyTGpBNUlEZ3VOalVnTVRZdU1EVWdOaTV3Wm1sc2JEMGlOelkzWldGaUlpOCtQSEJoZEdnZ1ptbHNiRDBpSXpjMk5uVmlNekZpY2lJZ1pEMGliVGdnTVRRZ05TNWlOeUEzTGpNMklESTRJREUwSWpvdlBqeHdZWFJvSUdScFpUMGlRakl0WWpJdU1qVWdhRmN4TGpsaE0yaHpibE5vYWlCQlVraGpSMU5YTW1Gc1ZHOVZJaUJtYVd4c1BTSWpNREEwTURjNUlpOCtQQzl6ZG1jKyIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0="">
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkNSTSBIb3N0ZWxlcsOtYSBQcm8iLAogICJzaG9ydF9uYW1lIjogIkNSTSBIb3N0ZWxlcsOtYSIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMmMzZTUwIiwKICAidGhlbWVfY29sb3IiOiAiIzJjM2U1MCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU5qUWlJR2hsYVdkb2REMGlOalFpSUhabGNuTnBiMjQ5SWpFdU1TSWdlRzFzYm5NOUltaDBkSEE2THk5M2QzY3Vkek11YjNKbkx6SXdNREF2YzNabklpQjJhV1YzUW05NVBTSXVNALTS0dOTGJhaUI0SWlCNGJXeHVjenBZYkdsdWF6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNVGs1T1M5NGJHbHVheUkrUEhCaGRHZ2dabWxzYkQwaWl6SXpOemMzWmlJZ1pEMGlaVEUyTGpBNUlEZ3VOalVnTVRZdU1EVWdOaTV3Wm1sc2JEMGlOelkzWldGaUlpOCtQSEJoZEdnZ1ptbHNiRDBpSXpjMk5uVmlNekZpY2lJZ1pEMGliVGdnTVRRZ05TNWlOeUEzTGpNMklESTRJREUwSWpvdlBqeHdZWFJvSUdScFpUMGlRakl0WWpJdU1qVWdhRmN4TGpsaE0yaHpibE5vYWlCQlVraGpSMU5YTW1Gc1ZHOVZJaUJtYVd4c1BTSWpNREEwTURjNUlpOCtQQzl6ZG1jKyIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0="">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -28,6 +28,26 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden; /* Prevenir scroll horizontal */
+        }
+
+        /* Overlay para móvil */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
         }
 
         /* PWA Styles */
@@ -63,9 +83,10 @@
             margin: 0 auto;
             background: white;
             box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            position: relative;
         }
 
-        /* Sidebar */
+        /* Sidebar - MEJORADO PARA MÓVIL */
         .sidebar {
             width: 280px;
             background: var(--primary-color);
@@ -73,6 +94,7 @@
             padding: 0;
             position: relative;
             transition: transform 0.3s ease;
+            z-index: 999;
         }
 
         .sidebar-header {
@@ -131,6 +153,7 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            min-width: 0; /* Importante para flexbox */
         }
 
         .top-bar {
@@ -141,6 +164,23 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
         }
 
         .page-title {
@@ -483,7 +523,7 @@
             padding: 25px;
         }
 
-        /* Responsive */
+        /* RESPONSIVE - MEJORADO */
         @media (max-width: 768px) {
             .sidebar {
                 position: fixed;
@@ -491,26 +531,88 @@
                 top: 0;
                 bottom: 0;
                 z-index: 999;
+                box-shadow: 5px 0 15px rgba(0,0,0,0.1);
             }
 
             .sidebar.active {
                 transform: translateX(280px);
             }
 
+            .menu-toggle {
+                display: block;
+            }
+
             .top-bar {
                 padding: 15px 20px;
             }
 
+            .page-title {
+                font-size: 20px;
+            }
+
             .content-area {
-                padding: 20px;
+                padding: 20px 15px;
             }
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
 
             .cliente-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .user-menu {
+                gap: 10px;
+            }
+
+            .user-menu .btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .sync-status {
+                display: none; /* Ocultar en móvil para ahorrar espacio */
+            }
+
+            /* Modal responsive */
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-content {
+                max-height: 95vh;
+            }
+
+            .modal-header, .modal-body {
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-bar {
+                padding: 10px 15px;
+            }
+
+            .content-area {
+                padding: 15px 10px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 18px;
+            }
+
+            .card-body {
+                padding: 20px 15px;
             }
         }
 
@@ -564,6 +666,7 @@
             z-index: 1001;
             transform: translateX(400px);
             transition: transform 0.3s ease;
+            max-width: calc(100vw - 40px);
         }
 
         .toast.show {
@@ -581,6 +684,50 @@
         .toast.warning {
             border-left: 4px solid var(--warning-color);
         }
+
+        @media (max-width: 768px) {
+            .toast {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                transform: translateY(-100px);
+            }
+
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+
+        /* Secciones */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Mejoras adicionales para evitar bloqueos */
+        body.sidebar-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                position: relative;
+                overflow-x: hidden;
+            }
+
+            .main-content {
+                transition: transform 0.3s ease;
+            }
+
+            body.sidebar-open .main-content {
+                transform: translateX(280px);
+                pointer-events: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -590,6 +737,9 @@
         <button onclick="installPWA()">Instalar</button>
         <button onclick="closePWABanner()">✕</button>
     </div>
+
+    <!-- Overlay para cerrar sidebar en móvil -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
 
     <div class="app-container">
         <!-- Sidebar -->
@@ -624,14 +774,14 @@
         <div class="main-content">
             <!-- Top Bar -->
             <div class="top-bar">
-                <div>
-                    <button class="btn btn-secondary btn-sm d-md-none" onclick="toggleSidebar()">☰</button>
+                <div class="top-bar-left">
+                    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
                     <span class="page-title" id="page-title">Dashboard</span>
                 </div>
                 <div class="user-menu">
                     <div class="sync-status" id="sync-status">🟢 Online</div>
-                    <button class="btn btn-outline btn-sm" onclick="exportData()">📤 Exportar</button>
-                    <button class="btn btn-primary btn-sm" onclick="syncData()">🔄 Sincronizar</button>
+                    <button class="btn btn-outline btn-sm" onclick="exportData()">📤</button>
+                    <button class="btn btn-primary btn-sm" onclick="syncData()">🔄</button>
                 </div>
             </div>
 
@@ -700,52 +850,6 @@
                             <form id="form-cliente">
                                 <div class="form-grid">
                                     <div class="form-group">
-                                        <label class="form-label">Nombre del Local *</label>
-                                        <input type="text" class="form-control" id="nombreLocal" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Responsable/Contacto *</label>
-                                        <input type="text" class="form-control" id="responsable" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Teléfono</label>
-                                        <input type="tel" class="form-control" id="telefono">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email">
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label class="form-label">Dirección *</label>
-                                    <textarea class="form-control" id="direccion" rows="3" required></textarea>
-                                </div>
-
-                                <div class="form-grid">
-                                    <div class="form-group">
-                                        <label class="form-label">Tipo de Café *</label>
-                                        <select class="form-control" id="tipoCafe" required>
-                                            <option value="">Seleccionar...</option>
-                                            <option value="100% Arabica">100% Arabica</option>
-                                            <option value="Cremoso">Cremoso</option>
-                                            <option value="Hostelería">Hostelería</option>
-                                            <option value="Premium">Premium</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Estado Inicial</label>
-                                        <select class="form-control" id="estado">
-                                            <option value="pendiente">Pendiente</option>
-                                            <option value="contactado">Contactado</option>
-                                            <option value="interesado">Interesado</option>
-                                            <option value="cliente">Cliente</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-grid">
-                                    <div class="form-group">
                                         <label class="form-label">Fecha de Visita *</label>
                                         <input type="date" class="form-control" id="fechaVisita" required>
                                     </div>
@@ -760,8 +864,8 @@
                                     <textarea class="form-control" id="oferta" rows="4" placeholder="Describe la oferta realizada o notas importantes..."></textarea>
                                 </div>
 
-                                <div style="display: flex; gap: 15px; margin-top: 30px;">
-                                    <button type="submit" class="btn btn-primary" style="flex: 1;">💾 Guardar Cliente</button>
+                                <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+                                    <button type="submit" class="btn btn-primary" style="flex: 1; min-width: 200px;">💾 Guardar Cliente</button>
                                     <button type="button" class="btn btn-secondary" onclick="limpiarFormulario()">🗑️ Limpiar</button>
                                 </div>
                             </form>
@@ -897,8 +1001,31 @@
             document.getElementById('pwa-banner').style.display = 'none';
         }
 
-        // Navegación
+        // NAVEGACIÓN MEJORADA PARA MÓVIL
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const body = document.body;
+
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('sidebar-open');
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const body = document.body;
+
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            body.classList.remove('sidebar-open');
+        }
+
         function showSection(sectionId) {
+            // Cerrar sidebar en móvil al cambiar sección
+            closeSidebar();
+
             // Ocultar todas las secciones
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
@@ -937,10 +1064,6 @@
                     cargarConfiguracion();
                     break;
             }
-        }
-
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
         }
 
         // Funciones de datos
@@ -1110,7 +1233,7 @@
             `).join('');
         }
 
-        // Detalle cliente
+        // Detalle cliente - MEJORADO PARA MÓVIL
         function mostrarDetalleCliente(id) {
             clienteActual = clientes.find(c => c.id === id);
             if (!clienteActual) return;
@@ -1120,7 +1243,7 @@
             const visitasHtml = clienteActual.visitas.map((visita, index) => `
                 <div class="cliente-info-item">
                     <span>📅</span> Visita ${index + 1}: ${visita}
-                    ${clienteActual.visitas.length > 1 ? `<button class="btn btn-danger btn-sm" onclick="eliminarVisita(${index})">❌</button>` : ''}
+                    ${clienteActual.visitas.length > 1 ? `<button class="btn btn-danger btn-sm" onclick="eliminarVisita(${index})" style="margin-left: 10px;">❌</button>` : ''}
                 </div>
             `).join('');
 
@@ -1143,13 +1266,13 @@
 
                 ${clienteActual.telefono ? `
                 <div style="margin: 10px 0;">
-                    <strong>Teléfono:</strong> ${clienteActual.telefono}
+                    <strong>Teléfono:</strong> <a href="tel:${clienteActual.telefono}">${clienteActual.telefono}</a>
                 </div>
                 ` : ''}
 
                 ${clienteActual.email ? `
                 <div style="margin: 10px 0;">
-                    <strong>Email:</strong> ${clienteActual.email}
+                    <strong>Email:</strong> <a href="mailto:${clienteActual.email}">${clienteActual.email}</a>
                 </div>
                 ` : ''}
 
@@ -1176,7 +1299,7 @@
                 <div class="form-group">
                     <label class="form-label">Añadir Nueva Visita:</label>
                     <input type="date" class="form-control" id="nueva-visita-modal">
-                    <button class="btn btn-primary btn-sm" onclick="agregarVisitaModal()" style="margin-top: 10px;">Añadir</button>
+                    <button class="btn btn-primary btn-sm" onclick="agregarVisitaModal()" style="margin-top: 10px; width: 100%;">Añadir</button>
                 </div>
 
                 <div class="form-group">
@@ -1187,10 +1310,10 @@
                         <option value="interesado" ${clienteActual.estado === 'interesado' ? 'selected' : ''}>Interesado</option>
                         <option value="cliente" ${clienteActual.estado === 'cliente' ? 'selected' : ''}>Cliente</option>
                     </select>
-                    <button class="btn btn-primary btn-sm" onclick="actualizarEstadoModal()" style="margin-top: 10px;">Actualizar</button>
+                    <button class="btn btn-primary btn-sm" onclick="actualizarEstadoModal()" style="margin-top: 10px; width: 100%;">Actualizar</button>
                 </div>
 
-                <div style="margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <div style="margin-top: 30px; display: grid; gap: 10px;">
                     <button class="btn btn-primary" onclick="enviarEmailCliente(${clienteActual.id})">📧 Enviar por Email</button>
                     <button class="btn btn-warning" onclick="editarCliente(${clienteActual.id})">✏️ Editar</button>
                     <button class="btn btn-danger" onclick="eliminarCliente(${clienteActual.id})">🗑️ Eliminar</button>
@@ -1231,6 +1354,7 @@
             
             guardarClientes();
             mostrarDetalleCliente(clienteActual.id);
+            mostrarClientes(); // Actualizar la lista también
             showToast('Estado actualizado', 'success');
         }
 
@@ -1256,6 +1380,7 @@
                 guardarClientes();
                 cerrarModal();
                 mostrarClientes();
+                actualizarDashboard();
                 showToast('Cliente eliminado', 'success');
             }
         }
@@ -1267,7 +1392,7 @@
                 ? clientesConVisitas
                     .sort((a, b) => new Date(a.proximaVisita) - new Date(b.proximaVisita))
                     .map(cliente => `
-                        <div class="cliente-card">
+                        <div class="cliente-card" onclick="mostrarDetalleCliente(${cliente.id})">
                             <div class="cliente-header">
                                 <div>
                                     <div class="cliente-nombre">${cliente.nombreLocal}</div>
@@ -1362,7 +1487,7 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 30px;">
+                <div style="margin-top: 30px; display: grid; gap: 10px;">
                     <button class="btn btn-primary" onclick="exportarReporte()">📧 Enviar Reporte Completo</button>
                     <button class="btn btn-secondary" onclick="exportarCSV()">📊 Descargar CSV</button>
                 </div>
@@ -1542,7 +1667,7 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
             toast.innerHTML = `
                 <div style="display: flex; align-items: center; justify-content: space-between;">
                     <span>${message}</span>
-                    <button onclick="this.parentElement.parentElement.remove()" style="background: none; border: none; font-size: 18px; cursor: pointer;">&times;</button>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: none; border: none; font-size: 18px; cursor: pointer; color: #6c757d;">&times;</button>
                 </div>
             `;
             
@@ -1550,7 +1675,11 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
             
             setTimeout(() => {
                 toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 300);
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.remove();
+                    }
+                }, 300);
             }, 3000);
         }
 
@@ -1576,9 +1705,26 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
             showToast('Función de edición en desarrollo', 'warning');
         }
 
-        // Event listeners
+        // Event listeners mejorados para móvil
         window.addEventListener('online', actualizarEstadoSincronizacion);
         window.addEventListener('offline', actualizarEstadoSincronizacion);
+
+        // Prevenir zoom en iOS
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+
+        // Cerrar sidebar al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (sidebar.classList.contains('active') && 
+                !sidebar.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                closeSidebar();
+            }
+        });
 
         // Click fuera del modal para cerrar
         document.getElementById('modal-cliente').addEventListener('click', function(e) {
@@ -1586,6 +1732,105 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
                 cerrarModal();
             }
         });
+
+        // Prevenir scroll del body cuando el modal está abierto
+        function cerrarModal() {
+            document.getElementById('modal-cliente').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function mostrarDetalleCliente(id) {
+            // ... código anterior del modal ...
+            // [El código del modal se mantiene igual]
+
+            clienteActual = clientes.find(c => c.id === id);
+            if (!clienteActual) return;
+
+            document.getElementById('modal-title').textContent = clienteActual.nombreLocal;
+            
+            const visitasHtml = clienteActual.visitas.map((visita, index) => `
+                <div class="cliente-info-item">
+                    <span>📅</span> Visita ${index + 1}: ${visita}
+                    ${clienteActual.visitas.length > 1 ? `<button class="btn btn-danger btn-sm" onclick="eliminarVisita(${index})" style="margin-left: 10px;">❌</button>` : ''}
+                </div>
+            `).join('');
+
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-grid">
+                    <div>
+                        <strong>Responsable:</strong><br>
+                        ${clienteActual.responsable}
+                    </div>
+                    <div>
+                        <strong>Estado:</strong><br>
+                        <span class="estado-badge estado-${clienteActual.estado}">${clienteActual.estado}</span>
+                    </div>
+                </div>
+
+                <div style="margin: 20px 0;">
+                    <strong>Dirección:</strong><br>
+                    ${clienteActual.direccion}
+                </div>
+
+                ${clienteActual.telefono ? `
+                <div style="margin: 10px 0;">
+                    <strong>Teléfono:</strong> <a href="tel:${clienteActual.telefono}">${clienteActual.telefono}</a>
+                </div>
+                ` : ''}
+
+                ${clienteActual.email ? `
+                <div style="margin: 10px 0;">
+                    <strong>Email:</strong> <a href="mailto:${clienteActual.email}">${clienteActual.email}</a>
+                </div>
+                ` : ''}
+
+                <div style="margin: 20px 0;">
+                    <strong>Tipo de Café:</strong> ${clienteActual.tipoCafe}
+                </div>
+
+                <div style="margin: 20px 0;">
+                    <strong>Próxima Visita:</strong> ${clienteActual.proximaVisita || 'Sin programar'}
+                </div>
+
+                ${clienteActual.oferta ? `
+                <div style="margin: 20px 0;">
+                    <strong>Oferta/Notas:</strong><br>
+                    ${clienteActual.oferta}
+                </div>
+                ` : ''}
+
+                <h4>Historial de Visitas</h4>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    ${visitasHtml}
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Añadir Nueva Visita:</label>
+                    <input type="date" class="form-control" id="nueva-visita-modal">
+                    <button class="btn btn-primary btn-sm" onclick="agregarVisitaModal()" style="margin-top: 10px; width: 100%;">Añadir</button>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Actualizar Estado:</label>
+                    <select class="form-control" id="nuevo-estado-modal">
+                        <option value="pendiente" ${clienteActual.estado === 'pendiente' ? 'selected' : ''}>Pendiente</option>
+                        <option value="contactado" ${clienteActual.estado === 'contactado' ? 'selected' : ''}>Contactado</option>
+                        <option value="interesado" ${clienteActual.estado === 'interesado' ? 'selected' : ''}>Interesado</option>
+                        <option value="cliente" ${clienteActual.estado === 'cliente' ? 'selected' : ''}>Cliente</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm" onclick="actualizarEstadoModal()" style="margin-top: 10px; width: 100%;">Actualizar</button>
+                </div>
+
+                <div style="margin-top: 30px; display: grid; gap: 10px;">
+                    <button class="btn btn-primary" onclick="enviarEmailCliente(${clienteActual.id})">📧 Enviar por Email</button>
+                    <button class="btn btn-warning" onclick="editarCliente(${clienteActual.id})">✏️ Editar</button>
+                    <button class="btn btn-danger" onclick="eliminarCliente(${clienteActual.id})">🗑️ Eliminar</button>
+                </div>
+            `;
+
+            document.getElementById('modal-cliente').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        }
 
         // Inicialización
         document.addEventListener('DOMContentLoaded', function() {
@@ -1600,6 +1845,12 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
             // Cargar configuración si existe
             if (configuracion.nombreEmpresa) {
                 document.querySelector('.sidebar-header p').textContent = configuracion.nombreEmpresa;
+            }
+
+            // Añadir data de clientes de ejemplo si no hay datos
+            if (clientes.length === 0) {
+                // Opcional: añadir datos de ejemplo
+                console.log('👋 CRM Hostelería cargado. Añade tu primer cliente.');
             }
         });
 
@@ -1639,6 +1890,7 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
             // Cerrar modal con Escape
             if (e.key === 'Escape') {
                 cerrarModal();
+                closeSidebar();
             }
         });
 
@@ -1675,9 +1927,61 @@ Reporte generado el ${new Date().toLocaleDateString('es-ES')} a las ${new Date()
         // Verificar visitas al cargar
         setTimeout(verificarVisitasProximas, 2000);
 
-        console.log('🚀 CRM Hostelería cargado correctamente');
-        console.log('📱 Para instalar como PWA, busca el botón de instalación en tu navegador');
+        // Mejorar rendimiento en móvil
+        if ('ontouchstart' in window) {
+            // Optimizaciones para dispositivos táctiles
+            document.body.classList.add('touch-device');
+        }
+
+        console.log('🚀 CRM Hostelería v2.0 cargado correctamente');
+        console.log('📱 Optimizado para móviles - El sidebar ya funciona correctamente');
         console.log('⌨️ Atajos: Ctrl+1 (Dashboard), Ctrl+2 (Clientes), Ctrl+3 (Nuevo), Ctrl+S (Sync), Ctrl+E (Export)');
     </script>
 </body>
 </html>
+                                    <div class="form-group">
+                                        <label class="form-label">Nombre del Local *</label>
+                                        <input type="text" class="form-control" id="nombreLocal" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Responsable/Contacto *</label>
+                                        <input type="text" class="form-control" id="responsable" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="telefono">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Dirección *</label>
+                                    <textarea class="form-control" id="direccion" rows="3" required></textarea>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Tipo de Café *</label>
+                                        <select class="form-control" id="tipoCafe" required>
+                                            <option value="">Seleccionar...</option>
+                                            <option value="100% Arabica">100% Arabica</option>
+                                            <option value="Cremoso">Cremoso</option>
+                                            <option value="Hostelería">Hostelería</option>
+                                            <option value="Premium">Premium</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Estado Inicial</label>
+                                        <select class="form-control" id="estado">
+                                            <option value="pendiente">Pendiente</option>
+                                            <option value="contactado">Contactado</option>
+                                            <option value="interesado">Interesado</option>
+                                            <option value="cliente">Cliente</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
